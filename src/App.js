@@ -1,24 +1,45 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import {questions} from "./data/quiz1";
+import {Page} from "./components/page";
+import {SubmitPage} from "./components/submitPage";
+
+//todo - add back button...
+//todo - add back button and intro page
 
 function App() {
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [canProceedToNextQuestion, setCanProceedToNextQuestion] = useState(false);
+  const [showSubmitPage, setShowSubmitPage] = useState(false);
+
+  console.log(showSubmitPage);
+
+  const proceedOrFinish = () => {
+      if (currentQuestionIndex < questions.length - 1) {
+          setCurrentQuestionIndex(currentQuestionIndex+1)
+          setCanProceedToNextQuestion(false);
+      } else {
+          setShowSubmitPage(true);
+      }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          {showSubmitPage ?
+              <SubmitPage/>
+              :
+              <div>
+                  <div className='progress-bar'>
+                      {currentQuestionIndex + 1} / {questions.length}
+                  </div>
+                  <Page question={questions[currentQuestionIndex]}
+                        setCanProceedToNextQuestion={setCanProceedToNextQuestion}
+                        canProceedToNextQuestion={canProceedToNextQuestion}
+                        proceedOrFinish={proceedOrFinish}/>
+              </div>
+          }
+      </div>
   );
 }
 
