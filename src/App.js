@@ -13,8 +13,6 @@ function App() {
   const [canProceedToNextQuestion, setCanProceedToNextQuestion] = useState(false);
   const [showSubmitPage, setShowSubmitPage] = useState(false);
 
-  console.log(showSubmitPage);
-
   const proceedOrFinish = () => {
       if (currentQuestionIndex < questions.length - 1) {
           setCurrentQuestionIndex(currentQuestionIndex+1)
