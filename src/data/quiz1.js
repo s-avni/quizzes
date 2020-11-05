@@ -1,3 +1,8 @@
+const quizIntro = {
+    title: "Life of a Basic CL",
+    details: "In this quiz, you'll learn about the basics of making a CL, uploading to X, and" +
+        "requesting a review."
+}
 const questions = [
     {
         questionText: 'What is the capital of France?',
@@ -37,4 +42,4 @@ const questions = [
     // },
 ];
 
-export {questions};
+export {questions, quizIntro};

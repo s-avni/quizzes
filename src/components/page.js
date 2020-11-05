@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import {Question} from "./question";
 import {Choices} from "./choices";
 
-//todo - button text "nextQuestion" or "Submit"
-
-function Page({question, setCanProceedToNextQuestion, canProceedToNextQuestion, proceedOrFinish}) {
+function Page({question, setCanProceedToNextQuestion, canProceedToNextQuestion,
+                  proceedOrFinish, goBack}) {
     return (
         <div>
         <Question questionText={question.questionText}/>
         <Choices choices={question.choices}
                  setCanProceedToNextQuestion={setCanProceedToNextQuestion}/>
+        <button onClick={goBack}>
+            Back
+        </button>
         <button onClick={proceedOrFinish} disabled={!canProceedToNextQuestion}>
-            Next Question
+            Next
         </button>
         </div>
     )

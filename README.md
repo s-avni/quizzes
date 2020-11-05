@@ -5,6 +5,7 @@ A page with quizes...
 * Top page that displays list of questions (so "questions" is passed as a prop to the quiz); see https://github.com/bonham000/app-time-lessons
 * Button: return to list of quizes after finish quiz
 * Add central controller that remembers your answer during the quiz -- for forward and back (e.g. selectedQuestions[])
+* Intro page with title...
 
 # Getting Started with Create React App
 
