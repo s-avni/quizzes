@@ -6,7 +6,7 @@ function Page({question, setCanProceedToNextQuestion, canProceedToNextQuestion,
                   proceedOrFinish, goBack}) {
     return (
         <div>
-        <Question questionText={question.questionText}/>
+        <Question questionContent={question.questionContent}/>
         <Choices choices={question.choices}
                  setCanProceedToNextQuestion={setCanProceedToNextQuestion}/>
         <button onClick={goBack}>

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 function Choice({choice, setCanProceedToNextQuestion}) {
-    console.log(choice);
     const [hasBeenClicked, setHasBeenClicked] = useState(false);
     const explanationColor = choice.isCorrect ? "green" : "red";
 

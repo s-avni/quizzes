@@ -5,7 +5,14 @@ const quizIntro = {
 }
 const questions = [
     {
-        questionText: 'What is the capital of France?',
+        questionContent: {
+            text: 'What is the capital of France?',
+            code: "public string getDirectionsToBeach(int age) {\n" +
+                "  if (age > 16) {\n" +
+                "    return 'Drive to beach';\n"+
+                "  } else if (age < 0) {\n" +
+                "    return 'Error';"
+        },
         choices: [
             { answerText: 'New York', isCorrect: false, explanation: "No..." },
             { answerText: 'London', isCorrect: false, explanation: "No..." },
@@ -14,7 +21,10 @@ const questions = [
         ],
     },
     {
-        questionText: 'Who is CEO of Tesla?',
+        questionContent: {
+            text: 'Who is CEO of Tesla?',
+            image: "quiz1/dummy-img.png",
+        },
         choices: [
             { answerText: 'Jeff Bezos', isCorrect: false, explanation: "No..." },
             { answerText: 'Elon Musk', isCorrect: true, explanation: "Yes..." },

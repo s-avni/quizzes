@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../index.css';
 
 function IntroPage({setShowIntroPage, quizIntro}) {
 
@@ -8,9 +9,9 @@ function IntroPage({setShowIntroPage, quizIntro}) {
 
     return (
         <div>
-        <div>
+        <code>
             {quizIntro.title}
-        </div>
+        </code>
         <div>
             {quizIntro.details}
         </div>

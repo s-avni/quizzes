@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
-import {questions, quizIntro} from "./data/quiz1";
+import {questions, quizIntro} from "./data/quiz1/quiz1";
 import {Page} from "./components/page";
 import {SubmitPage} from "./components/submitPage";
 import {IntroPage} from "./components/introPage";
@@ -11,7 +11,7 @@ function App() {
   const [canProceedToNextQuestion, setCanProceedToNextQuestion] = useState(false);
   const [canReturnToPreviousQuestion, setCanReturnToPreviousQuestion] = useState(false);
   const [showSubmitPage, setShowSubmitPage] = useState(false);
-  const [showIntroPage, setShowIntroPage] = useState(true);
+  const [showIntroPage, setShowIntroPage] = useState(false); //todo - set to true
 
   const proceedOrFinish = () => {
       if (currentQuestionIndex < questions.length - 1) {
