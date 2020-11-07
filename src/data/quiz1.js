@@ -1,19 +1,35 @@
+import {docco} from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import React from "react";
+
+//https://stackoverflow.com/questions/44154939/load-local-images-in-react-js
+//https://create-react-app.dev/docs/using-the-public-folder/
+
 const quizIntro = {
     title: "Life of a Basic CL",
     details: "In this quiz, you'll learn about the basics of making a CL, uploading to X, and" +
         "requesting a review."
 }
-//todo - remove code segment....put it all in the <p>
-//todo - likewise for the image!
+
+const snippet1 =
+    "public string getDirectionsToBeach(int age) {\n" +
+    "  if (age > 16) {\n" +
+    "    return 'Drive to beach';\n" +
+    "  } else if (age < 0) {\n" +
+    "    return 'Error';\n" +
+    "}"
+
 const questions = [
     {
         questionContent: {
-            text:  <p>What is the capital of France?<a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>,
-            code: "public string getDirectionsToBeach(int age) {\n" +
-                "  if (age > 16) {\n" +
-                "    return 'Drive to beach';\n"+
-                "  } else if (age < 0) {\n" +
-                "    return 'Error';"
+            text:  <>
+                <p>What is the capital of France? <a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>
+                <SyntaxHighlighter language="java" style={docco} showLineNumbers>
+                    {snippet1}
+                </SyntaxHighlighter>
+                <img style={{height: 100, width: 100}}
+                     src={process.env.PUBLIC_URL + "/quiz1/dummy-img.png"}/>
+            </>,
         },
         choices: [
             { answerText: 'New York', isCorrect: false, explanation: "No..." },
@@ -25,7 +41,6 @@ const questions = [
     {
         questionContent: {
             text: 'Who is CEO of Tesla?',
-            image: "quiz1/dummy-img.png",
         },
         choices: [
             { answerText: 'Jeff Bezos', isCorrect: false, explanation: "No..." },
@@ -54,8 +69,6 @@ const questions = [
     // },
 ];
 
-//todo - change to only export quiz1...
-//todo - mapping in the App.js folder (using index.js)
 const quiz1 = {questions: questions, quizIntro: quizIntro, path: "/quiz1"}
 
-export {questions, quizIntro, quiz1};
+export {quiz1};

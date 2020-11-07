@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, {useCallback} from 'react';
+import {useHistory} from 'react-router-dom';
 
 function SubmitScreen() {
+    const history = useHistory();
+    const handleOnClick = useCallback(() => history.push('/'), [history]);
+
     return (
-        <div>Thanks, you're done!</div>
+        <div>
+            <p>Thanks, you're done!</p>
+            <button type="button" onClick={handleOnClick}>
+                Return to quiz list.
+            </button>
+        </div>
     )
 }
 

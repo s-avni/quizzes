@@ -1,19 +1,18 @@
 import './App.css';
 import React, {useState} from 'react';
-import {questions, quizIntro} from "./data/quiz1";
 import {QuizSheet} from "./components/QuizSheet";
 import {SubmitScreen} from "./screens/SubmitScreen";
 import {IntroScreen} from "./screens/IntroScreen";
 
-function Quiz() {
+function Quiz({quiz}) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [canProceedToNextQuestion, setCanProceedToNextQuestion] = useState(false);
     const [canReturnToPreviousQuestion, setCanReturnToPreviousQuestion] = useState(false);
-    const [showSubmitPage, setShowSubmitPage] = useState(false);
-    const [showIntroPage, setShowIntroPage] = useState(true); //todo - set to true
+    const [showSubmitPage, setShowSubmitPage] = useState(false); //todo - set to false
+    const [showIntroPage, setShowIntroPage] = useState(false); //todo - set to true
 
     const proceedOrFinish = () => {
-        if (currentQuestionIndex < questions.length - 1) {
+        if (currentQuestionIndex < quiz.questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1)
             setCanReturnToPreviousQuestion(true);
             setCanProceedToNextQuestion(false);
@@ -33,16 +32,16 @@ function Quiz() {
     return (
         <div>
             {showIntroPage ?
-                <IntroScreen setShowIntroPage={setShowIntroPage} quizIntro={quizIntro}/>
+                <IntroScreen setShowIntroPage={setShowIntroPage} quizIntro={quiz.quizIntro}/>
                 :
                 showSubmitPage ?
                     <SubmitScreen/>
                     :
                     <>
                         <div className='progress-bar'>
-                            Question {currentQuestionIndex + 1} out of {questions.length}
+                            Question {currentQuestionIndex + 1} out of {quiz.questions.length}
                         </div>
-                        <QuizSheet question={questions[currentQuestionIndex]}
+                        <QuizSheet question={quiz.questions[currentQuestionIndex]}
                                    setCanProceedToNextQuestion={setCanProceedToNextQuestion}
                                    canProceedToNextQuestion={canProceedToNextQuestion}
                                    proceedOrFinish={proceedOrFinish}

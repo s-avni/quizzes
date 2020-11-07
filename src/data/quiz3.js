@@ -7,11 +7,6 @@ const questions = [
     {
         questionContent: {
             text: 'What is the capital of France?',
-            code: "public string getDirectionsToBeach(int age) {\n" +
-                "  if (age > 16) {\n" +
-                "    return 'Drive to beach';\n"+
-                "  } else if (age < 0) {\n" +
-                "    return 'Error';"
         },
         choices: [
             { answerText: 'New York', isCorrect: false, explanation: "No..." },
@@ -23,7 +18,6 @@ const questions = [
     {
         questionContent: {
             text: 'Who is CEO of Tesla?',
-            image: "quiz1/dummy-img.png",
         },
         choices: [
             { answerText: 'Jeff Bezos', isCorrect: false, explanation: "No..." },
@@ -52,6 +46,6 @@ const questions = [
     // },
 ];
 
-const quiz3 = {questions: questions, quizIntro: quizIntro}
+const quiz3 = {questions: questions, quizIntro: quizIntro, path: "/quiz3"}
 
-export {questions, quizIntro, quiz3};
+export {quiz3};
