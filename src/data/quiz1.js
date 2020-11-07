@@ -3,10 +3,12 @@ const quizIntro = {
     details: "In this quiz, you'll learn about the basics of making a CL, uploading to X, and" +
         "requesting a review."
 }
+//todo - remove code segment....put it all in the <p>
+//todo - likewise for the image!
 const questions = [
     {
         questionContent: {
-            text: 'What is the capital of France?',
+            text:  <p>What is the capital of France?<a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>,
             code: "public string getDirectionsToBeach(int age) {\n" +
                 "  if (age > 16) {\n" +
                 "    return 'Drive to beach';\n"+
@@ -52,4 +54,8 @@ const questions = [
     // },
 ];
 
-export {questions, quizIntro};
+//todo - change to only export quiz1...
+//todo - mapping in the App.js folder (using index.js)
+const quiz1 = {questions: questions, quizIntro: quizIntro, path: "/quiz1"}
+
+export {questions, quizIntro, quiz1};

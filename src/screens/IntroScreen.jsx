@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import '../index.css';
 
-function IntroPage({setShowIntroPage, quizIntro}) {
-
+function IntroScreen({setShowIntroPage, quizIntro}) {
     const goToQuestions = () => {
         setShowIntroPage(false);
     }
@@ -20,4 +19,4 @@ function IntroPage({setShowIntroPage, quizIntro}) {
     )
 }
 
-export {IntroPage};
+export {IntroScreen};

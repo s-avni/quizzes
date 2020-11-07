@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-function SubmitPage() {
+function SubmitScreen() {
     return (
         <div>Thanks, you're done!</div>
     )
 }
 
-export {SubmitPage};
+export {SubmitScreen};

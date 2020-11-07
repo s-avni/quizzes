@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Choice} from "./choice";
+import {Choice} from "./Choice";
 
 function Choices({choices, setCanProceedToNextQuestion}) {
     return (
