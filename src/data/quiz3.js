@@ -46,6 +46,8 @@ const questions = [
     // },
 ];
 
-const quiz3 = {questions: questions, quizIntro: quizIntro, path: "/quiz3"}
+const labels = ["X", "Y", "Z"];
+
+const quiz3 = {questions: questions, quizIntro: quizIntro, path: "/quiz3", labels: labels}
 
 export {quiz3};

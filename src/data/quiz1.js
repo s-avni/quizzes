@@ -23,10 +23,13 @@ const questions = [
     {
         questionContent: {
             text:  <>
-                <p>What is the capital of France? <a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>
+                <p>What is the capital of France?</p>
+                <a href="https://www.w3schools.com">A url!</a>
+                <p>A code snippet!</p>
                 <SyntaxHighlighter language="java" style={docco} showLineNumbers>
                     {snippet1}
                 </SyntaxHighlighter>
+                <p>An image!</p>
                 <img style={{height: 100, width: 100}}
                      src={process.env.PUBLIC_URL + "/quiz1/dummy-img.png"}/>
             </>,
@@ -69,6 +72,8 @@ const questions = [
     // },
 ];
 
-const quiz1 = {questions: questions, quizIntro: quizIntro, path: "/quiz1"}
+const labels = ["Java", "Protocol Buffers"];
+
+const quiz1 = {questions: questions, quizIntro: quizIntro, path: "/quiz1", labels: labels}
 
 export {quiz1};

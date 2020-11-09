@@ -8,8 +8,8 @@ function Quiz({quiz}) {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [canProceedToNextQuestion, setCanProceedToNextQuestion] = useState(false);
     const [canReturnToPreviousQuestion, setCanReturnToPreviousQuestion] = useState(false);
-    const [showSubmitPage, setShowSubmitPage] = useState(false); //todo - set to false
-    const [showIntroPage, setShowIntroPage] = useState(false); //todo - set to true
+    const [showSubmitPage, setShowSubmitPage] = useState(false);
+    const [showIntroPage, setShowIntroPage] = useState(true);
 
     const proceedOrFinish = () => {
         if (currentQuestionIndex < quiz.questions.length - 1) {
@@ -22,7 +22,7 @@ function Quiz({quiz}) {
     }
 
     const goBack = () => {
-        if (currentQuestionIndex > 0) { //this condition should always be true
+        if (currentQuestionIndex > 0) {
             setCurrentQuestionIndex(currentQuestionIndex - 1);
         } else {
             setShowIntroPage(true);

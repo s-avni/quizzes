@@ -46,6 +46,8 @@ const questions = [
     // },
 ];
 
-const quiz2 = {questions: questions, quizIntro: quizIntro, path: "/quiz2"}
+const labels = ["C++", "Arena Buffers"];
+
+const quiz2 = {questions: questions, quizIntro: quizIntro, path: "/quiz2", labels: labels};
 
 export {quiz2};

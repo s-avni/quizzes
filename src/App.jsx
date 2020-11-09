@@ -10,13 +10,15 @@ function App() {
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <ul>
-                        {quizzes.map((quiz) =>
-                            <li key={quiz.path}>
-                                <Link to={quiz.path}>{quiz.quizIntro.title}</Link>
-                            </li>
-                        )}
-                    </ul>
+                    <><p>Onboarding Quizzes</p>
+                        <ul>
+                            {quizzes.map((quiz) =>
+                                <li key={quiz.path}>
+                                    <Link to={quiz.path}>{quiz.quizIntro.title}</Link>
+                                </li>
+                            )}
+                        </ul>
+                    </>
                 </Route>
                 {quizzes.map((quiz) =>
                     <Route exact path={quiz.path}>
